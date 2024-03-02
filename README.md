@@ -19,3 +19,13 @@ Internal IP
 ```
 ## PC
 - 192.168.20.2
+
+
+# Learning Note
+After conducting this setup, I found out after many hours that if this field is not negotiated and instead ip x.x.x.x y.y.y.y, the tunnel cause some issues. Namely you'll be unable to ssh to the device. The tunnel will fail after a while. Very confusing and frustrating.
+```
+interface Dialer1
+ mtu 1492
+ ip vrf forwarding INET
+ ip address negotiated
+```
